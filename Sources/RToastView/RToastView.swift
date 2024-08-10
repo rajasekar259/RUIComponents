@@ -19,11 +19,11 @@ public struct ToastMessageView: View {
     public var body: some View {
         Text(message)
             .font(.system(size: 13))
-            .foregroundStyle(.white)
+            .foregroundStyle(.background)
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.black)
+            .background(.primary)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .transition(
                 .move(edge: position == .bottom ? .bottom : .top )
@@ -68,3 +68,8 @@ public struct RToastView: View {
         )
     )
 }
+
+#Preview {
+    ToastMessageView(message: "Toast Message", position: .bottom)
+}
+
