@@ -28,3 +28,11 @@ struct ContentView: View {
     }
 }
 
+## WaterfallGrid
+
+import RWaterfallGrid
+
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-17 at 13 39 00](https://github.com/user-attachments/assets/5125e2a3-e4c5-4192-964b-d5db24563313)
+
+https://github.com/user-attachments/assets/18c123b0-6fe6-4d5d-8fc4-1b11ca147e25
+
