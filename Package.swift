@@ -14,11 +14,19 @@ let package = Package(
         .library(
             name: "RGridIconView",
             targets: ["RGridIconView"]
+        ),
+        .library(
+            name: "RWaterfallGrid",
+            targets: ["RWaterfallGrid"]
         )
     ],
     dependencies: [],
     targets: [
         .target(name: "RToastView", dependencies: []),
-        .target(name: "RGridIconView", dependencies: [])
+        .target(name: "RGridIconView", dependencies: []),
+        .target(
+            name: "RWaterfallGrid",
+            dependencies: [.target(name: "RGridIconView")]
+        )
     ]
 )
