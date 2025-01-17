@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "RToastView",
+    name: "RUIComponents",
     platforms: [.iOS(.v15)],
     products:  [
         .library(
