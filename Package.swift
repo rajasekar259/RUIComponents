@@ -10,10 +10,15 @@ let package = Package(
         .library(
             name: "RToastView",
             targets: ["RToastView"]
+        ),
+        .library(
+            name: "RGridIconView",
+            targets: ["RGridIconView"]
         )
     ],
     dependencies: [],
     targets: [
-        .target(name: "RToastView", dependencies: [])
+        .target(name: "RToastView", dependencies: []),
+        .target(name: "RGridIconView", dependencies: [])
     ]
 )
