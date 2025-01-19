@@ -14,7 +14,7 @@ public struct WaterfallGridDemoView: View {
 
     struct GridItem: WaterfallGridItemContract, Equatable {
         let id = UUID().uuidString
-        let height: CGFloat
+        let gridHeight: CGFloat
         let color: Color
         let isLoading: Bool
     }
@@ -22,7 +22,7 @@ public struct WaterfallGridDemoView: View {
     @State var numberOfColums = 2
     @State var spacing = CGFloat(5)
     @State var items = [GridItem(
-        height: 50,
+        gridHeight: 50,
         color: .white, isLoading: true
     )]
 
@@ -63,14 +63,14 @@ public struct WaterfallGridDemoView: View {
                             }
                         }
                     } else {
-                        Text(String(format: "%.0f", item.height))
+                        Text(String(format: "%.0f", item.gridHeight))
                     }
                 }
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .frame(height: item.height)
+                .frame(height: item.gridHeight)
                 .background(item.color)
                 .clipShape(RoundedRectangle(cornerRadius: spacing))
                 .matchedGeometryEffect(id: item.id, in: girdItem)
@@ -134,7 +134,7 @@ public struct WaterfallGridDemoView: View {
 
         let newItems = (1...10).map { _ in
             GridItem(
-                height: CGFloat((50...200).randomElement()!),
+                gridHeight: CGFloat((50...200).randomElement()!),
                 color: [Color.blue, .green, .yellow, .red].randomElement()!, isLoading: false
             )
         }

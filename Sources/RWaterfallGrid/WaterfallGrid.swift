@@ -8,7 +8,7 @@
 import SwiftUI
 
 public protocol WaterfallGridItemContract: Identifiable {
-    var height: CGFloat { get }
+    var gridHeight: CGFloat { get }
 }
 
 public struct WaterfallGrid<I, IV>: View where I: WaterfallGridItemContract, IV: View {
@@ -16,6 +16,7 @@ public struct WaterfallGrid<I, IV>: View where I: WaterfallGridItemContract, IV:
         var items: [I]
     }
 
+    let items: [I]
     private let numberOfColumns: Int
     private let columns: [Column]
 
@@ -32,6 +33,7 @@ public struct WaterfallGrid<I, IV>: View where I: WaterfallGridItemContract, IV:
         horizontalSpacing: CGFloat = 8,
         @ViewBuilder itemView: @escaping (I) -> IV
     ) {
+        self.items = items
         self.numberOfColumns = numberOfColumns
         self.itemView = itemView
         self.verticalSpacing = verticalSpacing
@@ -44,7 +46,7 @@ public struct WaterfallGrid<I, IV>: View where I: WaterfallGridItemContract, IV:
             guard let minHeightColumn = columnsHeight.firstIndexOfMin()
             else { continue }
             columns[minHeightColumn].items.append(item)
-            columnsHeight[minHeightColumn] += (item.height + verticalSpacing)
+            columnsHeight[minHeightColumn] += (item.gridHeight + verticalSpacing)
         }
 
         self.columns = columns
@@ -56,7 +58,7 @@ public struct WaterfallGrid<I, IV>: View where I: WaterfallGridItemContract, IV:
                 LazyVStack(spacing: verticalSpacing) {
                     ForEach(columns[column].items) { item in
                         itemView(item)
-                            .frame(height: item.height)
+                            .frame(height: item.gridHeight)
                             .frame(maxWidth: .infinity)
                     }
                 }
