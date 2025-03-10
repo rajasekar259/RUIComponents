@@ -51,15 +51,12 @@ public struct SpinningCircularProgressStyle: ProgressViewStyle {
                         lineCap: .round
                     )
                 )
-                .rotationEffect(.radians(isAnimating ? 2 * CGFloat.pi : 0))
+                .rotationEffect(.degrees(isAnimating ? 360 : 0))
         }
         .padding(lineWidth/2)
         .frame(width: size, height: size)
         .onAppear {
             isAnimating = true
-        }
-        .onDisappear {
-            isAnimating = false
         }
         .animation(
             .linear(duration: 1.0)
