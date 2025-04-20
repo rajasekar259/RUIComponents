@@ -30,7 +30,22 @@ struct ContentView: View {
 
 ## WaterfallGrid
 
-import RWaterfallGrid
+<pre> ```
+    import RWaterfallGrid
+
+
+    
+    WaterfallGrid(
+            items: items,
+            numberOfColumns: numberOfColums,
+            verticalSpacing: spacing,
+            horizontalSpacing: spacing
+        ) { item in
+
+        //Configure Your view
+
+        }
+``` </pre>
 
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-17 at 13 39 00](https://github.com/user-attachments/assets/5125e2a3-e4c5-4192-964b-d5db24563313)
 
