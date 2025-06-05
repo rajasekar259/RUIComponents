@@ -47,7 +47,7 @@ struct ContentView: View {
         }
 ``` </pre>
 
-![Simulator Screenshot - iPhone 16 Pro - 2025-01-17 at 13 39 00](https://github.com/user-attachments/assets/5125e2a3-e4c5-4192-964b-d5db24563313)
+<img src="https://github.com/user-attachments/assets/5125e2a3-e4c5-4192-964b-d5db24563313" alt="Alt Text" style="width:50%; height:auto;">
 
 https://github.com/user-attachments/assets/18c123b0-6fe6-4d5d-8fc4-1b11ca147e25
 
@@ -68,5 +68,5 @@ https://github.com/user-attachments/assets/18c123b0-6fe6-4d5d-8fc4-1b11ca147e25
             ) { $0 }
 ``` </pre>
 
-![ContentView](https://github.com/user-attachments/assets/3c8d1fe1-fc24-4837-9397-f64f1ea4fd87)
+<img src="https://github.com/user-attachments/assets/3c8d1fe1-fc24-4837-9397-f64f1ea4fd87" alt="Alt Text" style="width:50%; height:auto;">
 
