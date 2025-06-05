@@ -51,3 +51,22 @@ struct ContentView: View {
 
 https://github.com/user-attachments/assets/18c123b0-6fe6-4d5d-8fc4-1b11ca147e25
 
+
+## Overlapping Circles Stack: True separation using blend mode and composition Group
+
+<pre> ```
+    import ROverlappingCirclesStack
+
+
+    let colors = [Color.blue, Color.green, Color.yellow, Color.red]
+    
+    OverlappingCirclesStack(
+                colors,
+                id: \.self,
+                overlappingOffset: 50,
+                spacing: 5
+            ) { $0 }
+``` </pre>
+
+![ContentView](https://github.com/user-attachments/assets/3c8d1fe1-fc24-4837-9397-f64f1ea4fd87)
+
