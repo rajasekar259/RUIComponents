@@ -8,29 +8,33 @@
 import SwiftUI
 
 
-public struct OverlappingCirclesStack<Data, ID, Content>: View where Data : RandomAccessCollection, ID : Hashable, Content : View {
+public struct OverlappingCirclesStack<Data, Content>: View where Data : RandomAccessCollection, Content : View {
     let items: Data
-    let id: KeyPath<Data.Element, ID>
     
     let overlappingOffset: CGFloat
     let spacing: CGFloat
+    let isFirstItemPrimary: Bool
     @ViewBuilder var itemView: (Data.Element) -> Content
     
-    public init(_ data: Data, id: KeyPath<Data.Element, ID>, overlappingOffset: CGFloat = 30, spacing: CGFloat = 5, @ViewBuilder content: @escaping (Data.Element) -> Content) {
+    public init(_ data: Data, overlappingOffset: CGFloat = 30, spacing: CGFloat = 5, isFirstItemPrimary: Bool = false, @ViewBuilder content: @escaping (Data.Element) -> Content) {
         self.items = data
         self.itemView = content
-        self.id = id
         self.overlappingOffset = overlappingOffset
         self.spacing = spacing
+        self.isFirstItemPrimary = isFirstItemPrimary
     }
     
     public var body: some View {
         HStack(spacing: -overlappingOffset) {
-            ForEach(items, id: id) { item in
+            ForEach(
+                items.enumerated().map { (offset: $0.0, element: $0.1) },
+                id: \.offset
+            ) { item in
                 Circle()
+                    .zIndex(Double(isFirstItemPrimary ? items.count - item.offset : item.offset))
                     .blendMode(.destinationOut)
                     .overlay {
-                        itemView(item)
+                        itemView(item.element)
                             .clipShape(Circle())
                             .padding(spacing)
                     }
@@ -38,4 +42,8 @@ public struct OverlappingCirclesStack<Data, ID, Content>: View where Data : Rand
         }
         .compositingGroup()
     }
+}
+
+#Preview {
+    OverlappingCirclesStackPreview()
 }

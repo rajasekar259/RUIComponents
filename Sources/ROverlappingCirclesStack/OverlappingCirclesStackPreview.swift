@@ -16,27 +16,23 @@ struct OverlappingCirclesStackPreview: View {
     
     var body: some View {
         VStack {
+            
             OverlappingCirclesStack(
                 colors,
-                id: \.self,
                 overlappingOffset: 50,
                 spacing: 5
             ) { $0 }
             
             OverlappingCirclesStack(
                 colors,
-                id: \.self,
                 overlappingOffset: 50,
-                spacing: 5
+                spacing: 5,
+                isFirstItemPrimary: true
             ) { $0 }
-                .compositingGroup()
+                
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(gradientBackground)
         .ignoresSafeArea()
     }
-}
-
-#Preview {
-    OverlappingCirclesStackPreview()
 }
