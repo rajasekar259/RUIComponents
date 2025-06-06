@@ -68,5 +68,5 @@ https://github.com/user-attachments/assets/18c123b0-6fe6-4d5d-8fc4-1b11ca147e25
             ) { $0 }
 ``` </pre>
 
-<img src="https://github.com/user-attachments/assets/3c8d1fe1-fc24-4837-9397-f64f1ea4fd87" alt="Alt Text" style="width:50%; height:auto;">
+<img src="https://github.com/user-attachments/assets/1b7a36bf-9b4c-4afb-93e3-63a191d502c1" alt="Alt Text" style="width:50%; height:auto;">
 
